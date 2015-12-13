@@ -13,9 +13,9 @@ $(document).ready(function(){
 	
 	$(document).on("click", "#rock, #paper, #scissors", function(){
 		var compChoice = Math.floor(Math.random() * choices.length);
-		if (compChoice === 1) {
+		if (compChoice = 1) {
 			compChoice = "Rock";
-		}	else if (compChoice === 2) {
+		}	else if (compChoice = 2) {
 			compChoice = "Paper";
 		}	else {
 			compChoice = "Scissors";
@@ -24,8 +24,8 @@ $(document).ready(function(){
 		//Function to compare user choice and comp choice
 		var userChoice = $(this).data("choice")
 		compareChoice(userChoice, compChoice);
-		$("#userChoice").html("userChoice");
-		$("#compChoice").html("compChoice");
+		$("#userChoice").html(userChoice);
+		$("#compChoice").html(compChoice);
 		roundCount++;
 		$("#roundCount").html(roundCount);
 	}); //On click rps function end
