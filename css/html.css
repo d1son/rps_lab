@@ -2,16 +2,16 @@
 	margin: 30px;
 }
 
-h3, h2 {
+h2, h3, h4 {
 	text-align: center;
 }
 
 #headerImg {
 	width: 250px;
-	height: 170px;
+	height: 125px;
 
 }
 
 .header {
-	margin-bottom: 25px;
+	margin-bottom: 10px;
 }
