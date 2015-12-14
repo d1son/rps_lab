@@ -6,16 +6,13 @@ $(document).ready(function(){
 	var tie = 0;
 	var roundCount = 0;
 
-	// Generate a random number using the Math.floor, Math.random function, still a global variable.
-	var compChoice = Math.floor(Math.random() * choices.length);
-
 	//Use if, else statement to assign a value using the randomly generated number to computer choices rock, paper, scissors. (On click function begin)
 	
 	$(document).on("click", "#rock, #paper, #scissors", function(){
 		var compChoice = Math.floor(Math.random() * choices.length);
-		if (compChoice = 1) {
+		if (compChoice ==1) {
 			compChoice = "Rock";
-		}	else if (compChoice = 2) {
+		}	else if (compChoice ==2) {
 			compChoice = "Paper";
 		}	else {
 			compChoice = "Scissors";
@@ -28,6 +25,40 @@ $(document).ready(function(){
 		$("#compChoice").html(compChoice);
 		roundCount++;
 		$("#roundCount").html(roundCount);
+
+		//Start Modal function here
+
+		if(roundCount === 5) {
+			if(userScore > compScore) {
+				$("#gameEndModal").html("You're the Winner!");
+			} else if(userScore < compScore) {
+				$("#gameEndModal").html("Computer wins! You're a Loser!");
+			}	else {
+				$("gameEndModal").html("It's a draw!");
+			}
+			$("#gameEnd").modal("show");
+			$("#gameEnd").on("hide.bs.modal", function() {
+				roundCount = 0;
+        userScore = 0;
+        compScore = 0;
+        tie = 0;
+        userChoice="";
+        compChoice ="";
+        rockW = "";
+        paperW = "";
+        scissorsW = "";
+        draw = "";
+				$("#roundCount").html(roundCount);
+        $(".userScore").html(userScore);
+        $(".compScore").html(compScore);
+        $("#userChoice").html(userChoice);
+        $("#compChoice").html(compChoice);
+        $("#resultOfGame").html(rockW);
+        $("#resultOfGame").html(paperW);
+        $("#resultOfGame").html(scissorsW);
+        $("#resultOfGame").html(draw);
+			})
+		}
 	}); //On click rps function end
 
 	var compareChoice = function(userChoice, compChoice) {

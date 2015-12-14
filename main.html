@@ -31,8 +31,7 @@
 			</div>
 			<div class="col-md-4">
 				<div class="panel panel-body">
-					<h3>Round: </h3>
-					<span id="roundCount">0</span>
+					<h3>Round: <span id="roundCount">0</span></h3>
 				</div>
 			</div>
 			<div class="col-md-4">
@@ -46,7 +45,7 @@
 			<div class="col-md-4">
 				<div class="panel panel-body">
 					<div class="panel-body text-center">
-						<h4 id="yourChoice">Your Choice: <span id="userChoice"></span></h4>
+						<h4>Your Choice: <span id="userChoice"></span></h4>
 					</div>
 				</div>	
 			</div>
@@ -60,9 +59,10 @@
 			<div class="col-md-4">
 				<div class="panel panel-body">
 					<div class="panel-body text-center">
-						<h4 id="cpuChoice">Computer Choice: <span id="compChoice"></span></h4>
+						<h4>Computer Choice: <span id="compChoice"></span></h4>
 					</div>
-				</div>	
+				</div>
+			</div>		
 		</div>
 
 		<div class="row">
@@ -70,14 +70,34 @@
 				<h3 id="result"><span id="resultOfGame"></span></h3>
 			</div>
 		</div>
+
+		<!-- Modal Start -->
+		<div class="modal fade" id="gameEnd" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Game Over</h3>
+          </div>
+          <div class = "modal-body text-center">
+            <h3>Your Score: <span class="userScore">0</span></h3>
+            <h3>Computer Score: <span class="compScore">0</span></h3>
+            <h3>Draws: <span id="ties">0</span></h3>
+            <h3 id="gameEndModal"></h3>
+          </div>
+          <div class="modal-footer">
+            <a class="btn btn-info" data-dismiss="modal">Try Again</a>
+          </div>
+        </div>
+      </div>
+    </div>
 	</div>
 
 
 
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/game.js"></script>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/game.js"></script>
 
 </body>
 </html>
